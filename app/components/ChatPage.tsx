@@ -55,9 +55,8 @@ export default function ChatPage() {
       setIsLoading(true);
 
       try {
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
-console.log("🔗 API_URL:", API_URL); // ← добавь эту строку
-const res = await fetch(`${API_URL}/ai`, {
+        const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+        const res = await fetch(`${API_URL}/ai`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ question: text }),
