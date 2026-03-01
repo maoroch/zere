@@ -1,10 +1,18 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Zere AI",
   description: "Университетский ассистент",
-  themeColor: "#0a0a0a",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  // This is the key line — without it env(safe-area-inset-*) returns 0 on iOS
+  viewportFit: "cover",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
